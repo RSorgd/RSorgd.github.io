@@ -1,0 +1,301 @@
+/* Clean, readable typography and centering */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fcfcfc;
+}
+
+/* Header & Navigation */
+header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #000;          /* Ensures active link stands out cleanly */
+  text-decoration: none; /* Optional: removes underline from active page */
+}
+
+
+.email-hint {
+  display: inline;
+}
+
+.email-hint .hint-label {
+  cursor: pointer;
+  color: #666;
+  text-decoration: underline;
+  margin-right: 0; /* Ensures no artificial CSS gaps are added */
+}
+
+.email-hint .hint-label:hover {
+  color: #000;
+}
+
+.email-hint .hint-text {
+  display: none;
+  color: #333;
+  padding-left: 0px; /* Crisp, controlled 0px gap when revealed */
+}
+
+.email-hint.open .hint-text {
+  display: inline;
+}
+
+/* Links & Headings */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+}
+
+/* --- INDENTED BULLET LISTS --- */
+ul {
+  display: block !important;
+  list-style-type: disc !important;   /* Force solid bullet dots */
+  list-style-position: outside !important; /* Keep text block aligned past the dot */
+  padding-left: 2.5rem !important;    /* Shift both dots and text 2.5rem to the right */
+  margin-left: 1rem !important;       /* Extra push from the left margin */
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+ul li {
+  display: list-item !important;      /* Restore standard li behavior if overridden */
+  margin-bottom: 0.6rem;              /* Clean paragraph spacing between items */
+  line-height: 1.5;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+
+h3.run-in {
+  display: inline;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+h3.run-in + p {
+  display: inline;
+}
+
+/* --- Talks & Travel Styling --- */
+
+.talks-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.talks-list li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Upcoming talks: Bold & crisp */
+.talks-list li.upcoming {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Past talks: Normal weight & faded */
+.talks-list li.past {
+  font-weight: 400;
+  color: #777;
+  opacity: 0.75;
+}
+
+/* Fades only the word "Past" in headings */
+.faded-title {
+  color: #888;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.talk-date {
+  font-family: monospace, monospace;
+  font-size: 0.9em;
+}
+
+
+/* Classic, crisp, un-faded browser link blue */
+.talk-slides a {
+  color: #0000ee !important; /* Pure classic HTML browser blue */
+  opacity: 1 !important;      /* Ensures no parent fading leaks into the link */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Optional standard visited state if desired */
+.talk-slides a:visited {
+  color: #551a8b !important; /* Standard browser visited purple */
+}
+/* --- Travel Photo Gallery --- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
+.photo-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.03);
+}
+
+.photo-grid figcaption {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 6px;
+}
+
+
+/* Ensure the parent main container is relatively positioned */
+main {
+  position: relative;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* Base Photo Sidebar Styles */
+.left-margin-photos figure {
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.left-margin-photos img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.left-margin-photos figcaption {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* --- WIDE DESKTOP SCREENS ONLY (Width > 1400px) --- */
+@media (min-width: 1400px) {
+  .left-margin-photos {
+    position: absolute;
+    left: -370px;     /* Push photos out into the left blank margin */
+    top: 0;
+    width: 330px;     /* Fixed width for margin photos */
+  }
+}
+
+/* --- SMALLER SCREENS / MOBILE (Width < 1400px) --- */
+@media (max-width: 1399px) {
+  .left-margin-photos {
+    display: flex;    /* Display photos horizontally above/below content */
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .left-margin-photos figure {
+    flex: 1;
+  }
+}
+
+
+
+
+/* 1. Main container defines the exact left alignment edge */
+main, header {
+  max-width: 650px;
+  margin: 0 auto;        /* Center the container on screen */
+  padding: 0 20px;       /* Consistent side padding */
+  box-sizing: border-box;
+}
+
+/* 2. Reset name heading margins to align precisely with text below */
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 50px;      /* Top spacing for the page */
+  margin-bottom: 0.5rem; /* Small gap before navigation/subtitle */
+  margin-left: 0;        /* Force hard left edge */
+  padding: 0;
+}
+
+/* 3. Ensure navigation aligns to the exact same left pixel */
+nav {
+  margin: 0 0 2rem 0;    /* Gap below navigation */
+  padding: 0;            /* Remove any default list padding */
+}
+
+/* 4. Ensure the first nav link starts with zero indentation */
+nav a:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 5. Match body text margins */
+p, section, ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Lists require explicit zeroing of default browser padding */
+ul {
+  list-style-position: inside; /* Keeps bullet points aligned to the left edge */
+}
