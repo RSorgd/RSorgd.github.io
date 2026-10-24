@@ -87,8 +87,8 @@ h3 {
   margin-top: 1.2rem;
 }
 
-/* --- INDENTED BULLET LISTS --- */
-ul {
+/* 1. Target ONLY your thesis list */
+ul.thesis-list {
   display: block !important;
   list-style-type: disc !important;   /* Force solid bullet dots */
   list-style-position: outside !important; /* Keep text block aligned past the dot */
@@ -98,16 +98,23 @@ ul {
   margin-bottom: 0.8rem;
 }
 
-ul li {
+ul.thesis-list li {
   display: list-item !important;      /* Restore standard li behavior if overridden */
   margin-bottom: 0.6rem;              /* Clean paragraph spacing between items */
   line-height: 1.5;
 }
 
-li {
+/* 2. Standard rule for Talks and all other general lists */
+ul {
+  padding-left: 1.5rem;               /* Standard list indentation */
+  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
+li {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
 
 h3.run-in {
   display: inline;
