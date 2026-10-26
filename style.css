@@ -306,3 +306,42 @@ p, section, ul {
 ul {
   list-style-position: inside; /* Keeps bullet points aligned to the left edge */
 }
+
+
+
+/* --- Click-Toggle Photo Specifics --- */
+
+/* Hide the checkbox */
+.left-margin-photos .photo-checkbox {
+  display: none;
+}
+
+/* Make the label the relative container for stacking */
+.left-margin-photos .photo-toggle-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Primary photo sets the container height naturally */
+.left-margin-photos .photo-primary {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Secondary photo sits directly on top */
+.left-margin-photos .photo-secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Swap opacity when checked */
+.left-margin-photos .photo-checkbox:checked + .photo-toggle-label .photo-secondary {
+  opacity: 1;
+}
+
+.left-margin-photos .photo-checkbox:checked + .photo-toggle-label .photo-primary {
+  opacity: 0;
+}
