@@ -28,10 +28,10 @@
     <aside class="left-margin-photos">
     <figure>
       <img src="Reinier.jpeg" alt="Reinier">
-      <figcaption id="caption">Photo of my person</figcaption>
+      <figcaption id="caption">Standard caption of this photo</figcaption>
     </figure>
     <script>
-  const captions = ["Me????", "...", "Reinier.jpeg", "Photo of my person"];
+  const captions = ["Photo of my person","...", "Reinier.jpeg"];
   document.getElementById('caption').textContent = captions[new Date().getSeconds() % captions.length];
 </script>
   
